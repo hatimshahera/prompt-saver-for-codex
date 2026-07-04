@@ -5,7 +5,7 @@
   "slug": "prompt-saver-for-codex",
   "repoFolder": "tool-05-prompt-saver-for-codex",
   "description": "A BYOK VS Code extension that rewrites rough developer prompts into clear, token-aware instructions for Codex and other coding agents.",
-  "status": "in-progress",
+  "status": "published",
   "skills": [
     "VS Code Extension API",
     "SecretStorage",
@@ -15,9 +15,6 @@
     "TypeScript"
   ],
   "category": "Developer Tools",
-  "liveUrl": "",
   "githubUrl": "https://github.com/hatimshahera/prompt-saver-for-codex",
-  "reelUrl": "",
-  "writeupUrl": "",
   "lesson": "Small developer tools work best when they improve one high-friction moment instead of trying to own the whole workflow."
 }

@@ -34,6 +34,6 @@ Show that a rough coding-agent prompt can become a clearer, safer, paste-ready i
 - SecretStorage key setup command.
 - Status bar item labeled `Prompt Saver`.
 
-## Reel hook
+## Short demo script
 
 `Stop sending "fix this" to coding agents. I built a VS Code extension that rewrites rough prompts into clearer Codex instructions before you send them.`

@@ -131,9 +131,9 @@ The API key is stored in VS Code SecretStorage, not in settings JSON.
 - API keys stay in VS Code SecretStorage.
 - Prompts are only sent to your selected AI provider.
 
-## Current limitation
+## Integration note
 
-This extension currently improves prompts and copies/replaces selected text. Direct insertion into another extension's chat panel depends on what that extension exposes through VS Code commands or APIs.
+Prompt Saver improves prompts and copies/replaces selected text. Direct insertion into another extension's chat panel depends on what that extension exposes through VS Code commands or APIs.
 
 ## Tech stack
 
@@ -146,8 +146,4 @@ This extension currently improves prompts and copies/replaces selected text. Dir
 
 ## Links
 
-- Live demo: TBD
-- GitHub/public repo: TBD
-- Reel/social: TBD
-
-Status: in-progress
+- Repository: https://github.com/hatimshahera/prompt-saver-for-codex
