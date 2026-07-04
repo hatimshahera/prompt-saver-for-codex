@@ -1,0 +1,153 @@
+{
+  "name": "prompt-saver-for-codex",
+  "displayName": "Prompt Saver for Codex",
+  "description": "Rewrite rough developer prompts into clear, token-aware instructions for Codex and other coding agents.",
+  "version": "0.1.1",
+  "publisher": "hatimshahera",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hatimshahera/60-Days-60-AI-Tools.git",
+    "directory": "tool-05-prompt-saver-for-codex"
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:promptSaver.improveSelectedPrompt",
+    "onCommand:promptSaver.improveClipboardPrompt",
+    "onCommand:promptSaver.improveFromInput",
+    "onCommand:promptSaver.setApiKey",
+    "onCommand:promptSaver.deleteApiKey",
+    "onCommand:promptSaver.chooseProvider",
+    "onCommand:promptSaver.openSettings",
+    "onCommand:promptSaver.improveAndCopy",
+    "onCommand:promptSaver.improveAndReplaceSelection"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "promptSaver.improveSelectedPrompt",
+        "title": "Prompt Saver: Improve Selected Prompt"
+      },
+      {
+        "command": "promptSaver.improveClipboardPrompt",
+        "title": "Prompt Saver: Improve Clipboard Prompt"
+      },
+      {
+        "command": "promptSaver.improveFromInput",
+        "title": "Prompt Saver: Improve Prompt from Input Box"
+      },
+      {
+        "command": "promptSaver.setApiKey",
+        "title": "Prompt Saver: Set API Key"
+      },
+      {
+        "command": "promptSaver.deleteApiKey",
+        "title": "Prompt Saver: Delete API Key"
+      },
+      {
+        "command": "promptSaver.chooseProvider",
+        "title": "Prompt Saver: Choose Provider"
+      },
+      {
+        "command": "promptSaver.openSettings",
+        "title": "Prompt Saver: Open Settings"
+      },
+      {
+        "command": "promptSaver.improveAndCopy",
+        "title": "Prompt Saver: Improve and Copy"
+      },
+      {
+        "command": "promptSaver.improveAndReplaceSelection",
+        "title": "Prompt Saver: Improve and Replace Selection"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "promptSaver.improveSelectedPrompt",
+        "key": "ctrl+alt+p",
+        "mac": "cmd+alt+p",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "Prompt Saver",
+      "properties": {
+        "promptSaver.provider": {
+          "type": "string",
+          "enum": [
+            "openai",
+            "anthropic",
+            "gemini",
+            "openrouter",
+            "ollama"
+          ],
+          "default": "openai",
+          "description": "AI provider used to improve prompts. OpenAI is implemented in the MVP."
+        },
+        "promptSaver.model": {
+          "type": "string",
+          "default": "gpt-4.1-mini",
+          "description": "Model name for the selected provider."
+        },
+        "promptSaver.temperature": {
+          "type": "number",
+          "default": 0.2,
+          "minimum": 0,
+          "maximum": 2,
+          "description": "Sampling temperature for prompt rewriting."
+        },
+        "promptSaver.maxOutputTokens": {
+          "type": "number",
+          "default": 700,
+          "minimum": 100,
+          "maximum": 2000,
+          "description": "Maximum number of output tokens for the improved prompt."
+        },
+        "promptSaver.defaultOutputStyle": {
+          "type": "string",
+          "enum": [
+            "structured",
+            "concise"
+          ],
+          "default": "structured",
+          "description": "Preferred shape for improved prompts."
+        },
+        "promptSaver.autoCopyImprovedPrompt": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically copy the improved prompt after generation."
+        },
+        "promptSaver.showTokenEstimate": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show rough before/after token estimates."
+        },
+        "promptSaver.showPreviewAfterCompile": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically open a preview after improving a prompt."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsc -p . && esbuild src/extension.ts --bundle --platform=node --format=cjs --external:vscode --outfile=dist/extension.js",
+    "watch": "tsc -w -p .",
+    "typecheck": "tsc --noEmit",
+    "package": "npm run build && vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^3.2.1",
+    "esbuild": "^0.24.2",
+    "typescript": "^5.7.0"
+  }
+}
