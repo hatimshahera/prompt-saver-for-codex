@@ -147,3 +147,7 @@ Prompt Saver improves prompts and copies/replaces selected text. Direct insertio
 ## Links
 
 - Repository: https://github.com/hatimshahera/prompt-saver-for-codex
+
+## Support Me
+
+If this helped you, you can support my work here: [buymeacoffee.com/hatimshahera](https://buymeacoffee.com/hatimshahera)
